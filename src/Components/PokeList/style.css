@@ -1,0 +1,16 @@
+.container {
+	padding: 40px;
+	margin: 0 auto;
+}
+
+h1 {
+	text-align: center;
+	font-size: 54px;
+}
+
+.pokedex {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+	grid-gap: 20px;
+	padding-inline-start: 0;
+}

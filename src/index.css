@@ -1,13 +1,17 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: "Poke Text";
+  src: url("./fonts/Pokemon-Hollow.ttf");
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: "Poke Solid";
+  src: url("./fonts/Pokemon-Solid.ttf");
+}
+
+body {
+  background: #efefbb;
+  background: linear-gradient(to right, rgb(197, 230, 236), rgb(239, 187, 230));
+  color: white;
+  margin: 0;
+  font-family: 'Poke Text';
 }
