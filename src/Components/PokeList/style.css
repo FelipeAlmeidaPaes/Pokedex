@@ -3,9 +3,28 @@
 	margin: 0 auto;
 }
 
+#searchInput {
+	position: relative;
+	display: flex;
+	margin: 0 auto 20px;
+	width: 320px;
+	border-radius: 20px;
+	border: none;
+	padding: 20px;
+	text-align: center;
+	background: #f3f3f3;
+	color: #666;
+	font-family: rubik;
+}
+
+#searchInput:focus {
+	outline: none;
+}
+
 h1 {
 	text-align: center;
 	font-size: 54px;
+	margin: 0;
 }
 
 .pokedex {

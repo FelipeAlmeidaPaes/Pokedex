@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, ChangeEvent } from 'react'
 import { PokeItem } from '../PokeItem/PokeItem'
 import './style.css'
 
@@ -41,6 +41,11 @@ interface IPokemon {
 export const PokeList = () => {
 
   const [pokeList, setPokelist] = useState<IPokemon[]>([])
+  const [searchTerm, setSearchTerm] = useState<string>("")
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
+  }
 
   async function gatherPokemonData(): Promise<any> {
     const typeInfo = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151&offset=0");
@@ -62,8 +67,19 @@ export const PokeList = () => {
   return (
     <div className="container">
       <h1>Pokedex</h1>
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Encontre um Pokémon"
+        value={searchTerm}
+        onChange={handleChange}
+        autoComplete="off"
+      />
       <ul className="pokedex">
         {pokeList.map((pokemon: IPokemon) => {
+          if (!pokemon.name.includes(searchTerm)) {
+            return null;
+          }
           return (
             <PokeItem
               key={pokemon.id}
