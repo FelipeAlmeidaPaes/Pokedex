@@ -77,17 +77,21 @@ export const PokeList = () => {
       />
       <ul className="pokedex">
         {pokeList.map((pokemon: IPokemon) => {
-          if (!pokemon.name.includes(searchTerm)) {
+          
+          const {id, abilities, types, name, height, stats} = pokemon
+
+          if (!name.includes(searchTerm)) {
             return null;
           }
+
           return (
             <PokeItem
-              key={pokemon.id}
-              abilities={pokemon.abilities.map(hability => hability.ability.name)}
-              id={pokemon.id} name={pokemon.name}
-              types={pokemon.types.map(poke => poke.type.name)}
-              height={pokemon.height}
-              stats={pokemon.stats}
+              key={id}
+              abilities={abilities.map(hability => hability.ability.name)}
+              id={id} name={name}
+              types={types.map(poke => poke.type.name)}
+              height={height}
+              stats={stats}
             />
           )
         })}
