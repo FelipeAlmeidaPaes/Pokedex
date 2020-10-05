@@ -33,3 +33,51 @@ h1 {
 	grid-gap: 20px;
 	padding-inline-start: 0;
 }
+
+
+@media only screen and (max-width: 480px) {
+	.container {
+		padding: 0 20px 20px;
+		margin: 0 auto;
+	}
+
+	h1 {
+		line-height: 2;
+	}
+
+	#searchInput {
+		width: 240px;
+	}
+
+	.pokedex {
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	}
+}
+
+@media only screen and (min-width: 481px) and (max-width: 700px) {
+	.container {
+		padding: 20px;
+		margin: 0 auto;
+	}
+
+	h1 {
+		line-height: 2;
+	}
+
+	.pokedex {
+		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+		max-width: 320px;
+		margin: 0 auto;
+	}
+}
+
+@media only screen and (min-width: 701px) and (max-width: 1260px) {
+	.container {
+		padding: 40px;
+		margin: 0 auto;
+	}
+
+	.pokedex {
+		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	}
+}
