@@ -25,7 +25,7 @@ export const PokeItem = (props: IPokeItemProps) => {
     <li className={`card ${types[0]}`}>
       <div className="card-inner">
         <div className={`card-front ${types[0]}`}>
-          <img className='card-image' src={`https://pokeres.bastionbot.org/images/pokemon/${id}.png`} alt={name} />
+          <img className='card-image' src={`https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/${id}.png`} alt={name} />
           <h2 className="card-title">{id}. {name}</h2>
           <p className="card-subtitle">{types.map(name => name).join(' | ')}</p>
         </div>
